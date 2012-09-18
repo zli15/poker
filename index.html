@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="timer.js"></script>
+		<script src="score.js"></script>
+
+		<style>
+			#record{
+				width:75%;
+				background: green;
+			}
+
+			#timerframe{
+				width:25%;
+				background: red;
+				border: 2px solid black;
+				border-radius: 3px;
+			}
+
+			#timer{
+				background: red;
+			}
+
+			margin{
+				margin-top: 3px;
+				margin-bottom: 3px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<section id="record" >
+				<div id="timerframe" >
+					<input  id="timer" value="TIME: 0:00:00" readonly="readonly" style="border:none;"  >
+				</div>
+				<div id="score">
+				</div>
+				<div id="move">
+				</div>
+			</section>
+			<section id="playarea">
+			</section>
+			<!-- delete these later -->
+			<section>
+				<div id="timercontroller">
+					<table>
+						<tr>
+							<p>timer controller</p>
+						</tr>
+						<tr>
+							<input name="starter" type=button value="Start" style="width:97px; font-weight:bold" onClick="startTimer()" >
+							<input name="pauser" type=button value="Pause" style="width:97px; font-weight:bold" onClick="pauseTimer()" >
+							<input name="resetter" type=button value="Reset" style="width:97px; font-weight:bold" onClick="resetTimer()" >
+						</tr>
+					</table>	
+				<div>
+			</section>
+		</div>
+	</body>
+</html>
