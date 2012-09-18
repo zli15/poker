@@ -3,59 +3,107 @@
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script src="timer.js"></script>
-		<script src="score.js"></script>
+		<script src="scorer.js"></script>
+
+		<script>
+			function resetAll (){
+				resetTimer();
+				resetScorer();
+			}
+		</script>
 
 		<style>
 			#record{
 				width:75%;
+				border: 2px solid black;
 				background: green;
 			}
 
-			#timerframe{
+			.frame{
 				width:25%;
 				background: red;
 				border: 2px solid black;
 				border-radius: 3px;
-			}
-
-			#timer{
 				background: red;
+				margin-left: 5px;
+				 
 			}
 
-			margin{
-				margin-top: 3px;
-				margin-bottom: 3px;
-			}
 		</style>
 	</head>
 	<body>
 		<div id="wrapper">
-			<section id="record" >
-				<div id="timerframe" >
-					<input  id="timer" value="TIME: 0:00:00" readonly="readonly" style="border:none;"  >
-				</div>
-				<div id="score">
-				</div>
+			<div id="record" class="record">
+				<span id="timerframe">
+					<input  id="timer" class="frame" value="TIME: 0:00:00" readonly="readonly" ></input>
+				</span>
+				<span id="scoreframe" style="display: inline;">
+					<input id="scorer" class="frame" value="SCORE: 0" readonly="readonly" ></input>
+				</span>
 				<div id="move">
 				</div>
-			</section>
-			<section id="playarea">
-			</section>
+			</div>
+			<div id="playarea">
+				<div id="headarea">
+					<span id="wcards">
+					</span>
+					<span id="draft">
+					</span>
+					<span id="blank">
+					</span>
+					<span id="heart">
+					</span>
+					<span id="diamond">
+					</span>
+					<span id="spade">
+					</span>
+					<span id="club">
+					</span>
+				</div>
+				<div id="mainarea">
+					<span id="c1">
+						<img src="img/CLBAce.png"><img>
+					</span>
+					<span id="c2" >
+						<img src="img/CLB02.png"><img>
+					</span>
+					<span id="c3" >
+						<img src="img/CLB03.png"><img>
+					</span>
+					<span id="c4" >
+						<img src="img/CLB04.png"><img>
+					</span>
+					<span id="c5" >
+						<img src="img/CLB05.png"><img>
+					</span>
+					<span id="c6" >
+						<img src="img/CLB06.png"><img>
+					</span>
+					<span id="c7" >
+						<img src="img/CLB07.png"><img>
+					</span>
+				</div>
+			</div>
+
 			<!-- delete these later -->
-			<section>
-				<div id="timercontroller">
-					<table>
-						<tr>
-							<p>timer controller</p>
-						</tr>
-						<tr>
-							<input name="starter" type=button value="Start" style="width:97px; font-weight:bold" onClick="startTimer()" >
-							<input name="pauser" type=button value="Pause" style="width:97px; font-weight:bold" onClick="pauseTimer()" >
-							<input name="resetter" type=button value="Reset" style="width:97px; font-weight:bold" onClick="resetTimer()" >
-						</tr>
-					</table>	
-				<div>
-			</section>
+			
+			<div id="timercontroller">
+				<table>
+					<tr>
+						<td>timer controller</td>
+						<td><input name="starter" type=button value="Start" style="width:97px; font-weight:bold" onClick="startTimer()" ></input></td>
+						<td><input name="pauser" type=button value="Pause" style="width:97px; font-weight:bold" onClick="pauseTimer()" ></input>	</td>		
+					</tr>
+					<tr>
+						<td><p>scorer controller</p></td>
+						<td><input name="sgetter" type=button value="Get Score!" style="width:97px; font-weight:bold" onClick="getScore()"></input></td>
+					</tr>
+					<tr>
+						<td><p>RESET</p>
+						<td><input name="resetter" type=button value="Reset" style="width:97px; font-weight:bold" onClick="resetAll()" ></input></td>
+					</tr>
+				</table>	
+			</div>	
 		</div>
 	</body>
 </html>
