@@ -27,30 +27,42 @@
 				border-radius: 3px;
 				background: red;
 				margin-left: 5px;
-				float: left; 
+				display: inline;
 			}
 
 			.comp{
 				background: red;
 				border:none;
+
 			}
 
 			.cardblock{
 				width: 128px;
+				height: 128px;
 				border: 5px solid gray;
 				border-radius: 3px;
-				float: left;
+				float:left;
 			}
 
 			#controller{
 				clear: both;
+			}
+
+			#playarea{
+				width: 1000px;
+				clear: both;
+			}
+
+			.backcard{
+				position: relative;
+				top: -118px;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="record" class="record">
-				<div id="timerframe" class="frame">
+				<div id="timerframe" class="frame" >
 					<input  id="timer" class="comp" value="TIME: 0:00:00" readonly="readonly" />
 				</div>
 				<div id="scoreframe" class="frame">
@@ -61,27 +73,29 @@
 			</div>
 			<div id="playarea">
 				<div id="headarea">
-					<div id="wcards">
+					<div class="cardblock" id="wcards">
 					</div>
-					<div id="draft">
+					<div class="cardblock" id="draft">
 					</div>
-					<div id="blank">
+					<div class="cardblock" id="blank">
 					</div>
-					<div id="heart">
+					<div class="cardblock" id="heart">
 					</div>
-					<div id="diamond">
+					<div class="cardblock" id="diamond">
 					</div>
-					<div id="spade">
+					<div class="cardblock" id="spade">
 					</div>
-					<div id="club">
+					<div class="cardblock" id="club">
 					</div>
 				</div>
-				<div id="mainarea">
+				<div id="mainarea" style = "width: 1000px;">
 					<div class="cardblock" id="c1">
-						<img src="img/CLBAce.png"/>
+						<img  src="img/CLBAce.png"/>
+						<img class = "backcard" src="img/CLBAce.png"/>
 					</div>
 					<div class="cardblock" id="c2" >
 						<img src="img/CLB02.png"/>
+						<img src="img/CLBAce.png"/>
 					</div>
 					<div class="cardblock" id="c3" >
 						<img src="img/CLB03.png"/>
