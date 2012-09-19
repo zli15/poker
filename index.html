@@ -17,6 +17,7 @@
 				width:75%;
 				border: 2px solid black;
 				background: green;
+				clear:both;
 			}
 
 			.frame{
@@ -26,81 +27,96 @@
 				border-radius: 3px;
 				background: red;
 				margin-left: 5px;
-				 
+				float: left; 
 			}
 
+			.comp{
+				background: red;
+				border:none;
+			}
+
+			.cardblock{
+				width: 128px;
+				border: 5px solid gray;
+				border-radius: 3px;
+				float: left;
+			}
+
+			#controller{
+				clear: both;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="record" class="record">
-				<span id="timerframe">
-					<input  id="timer" class="frame" value="TIME: 0:00:00" readonly="readonly" ></input>
-				</span>
-				<span id="scoreframe" style="display: inline;">
-					<input id="scorer" class="frame" value="SCORE: 0" readonly="readonly" ></input>
-				</span>
+				<div id="timerframe" class="frame">
+					<input  id="timer" class="comp" value="TIME: 0:00:00" readonly="readonly" />
+				</div>
+				<div id="scoreframe" class="frame">
+					<input id="scorer" class="comp" value="SCORE: 0" readonly="readonly" />
+				</div>
 				<div id="move">
 				</div>
 			</div>
 			<div id="playarea">
 				<div id="headarea">
-					<span id="wcards">
-					</span>
-					<span id="draft">
-					</span>
-					<span id="blank">
-					</span>
-					<span id="heart">
-					</span>
-					<span id="diamond">
-					</span>
-					<span id="spade">
-					</span>
-					<span id="club">
-					</span>
+					<div id="wcards">
+					</div>
+					<div id="draft">
+					</div>
+					<div id="blank">
+					</div>
+					<div id="heart">
+					</div>
+					<div id="diamond">
+					</div>
+					<div id="spade">
+					</div>
+					<div id="club">
+					</div>
 				</div>
 				<div id="mainarea">
-					<span id="c1">
-						<img src="img/CLBAce.png"><img>
-					</span>
-					<span id="c2" >
-						<img src="img/CLB02.png"><img>
-					</span>
-					<span id="c3" >
-						<img src="img/CLB03.png"><img>
-					</span>
-					<span id="c4" >
-						<img src="img/CLB04.png"><img>
-					</span>
-					<span id="c5" >
-						<img src="img/CLB05.png"><img>
-					</span>
-					<span id="c6" >
-						<img src="img/CLB06.png"><img>
-					</span>
-					<span id="c7" >
-						<img src="img/CLB07.png"><img>
-					</span>
+					<div class="cardblock" id="c1">
+						<img src="img/CLBAce.png"/>
+					</div>
+					<div class="cardblock" id="c2" >
+						<img src="img/CLB02.png"/>
+					</div>
+					<div class="cardblock" id="c3" >
+						<img src="img/CLB03.png"/>
+					</div>
+					<div class="cardblock" id="c4" >
+						<img src="img/CLB04.png"/>
+					</div>
+					<div class="cardblock" id="c5" >
+						<img src="img/CLB05.png"/>
+					</div>
+					<div class="cardblock" id="c6" >
+						<img src="img/CLB06.png"/>
+					</div>
+					<div class="cardblock" id="c7" >
+						<img src="img/CLB07.png"/>
+					</div>
 				</div>
 			</div>
 
 			<!-- delete these later -->
 			
-			<div id="timercontroller">
+			<div id="controller">
 				<table>
 					<tr>
 						<td>timer controller</td>
-						<td><input name="starter" type=button value="Start" style="width:97px; font-weight:bold" onClick="startTimer()" ></input></td>
-						<td><input name="pauser" type=button value="Pause" style="width:97px; font-weight:bold" onClick="pauseTimer()" ></input>	</td>		
+						<td><input name="starter" type=button value="Start" style="width:97px; font-weight:bold" onClick="startTimer()" /></td>
+						<td><input name="pauser" type=button value="Pause" style="width:97px; font-weight:bold" onClick="pauseTimer()" />	</td>		
 					</tr>
 					<tr>
 						<td><p>scorer controller</p></td>
-						<td><input name="sgetter" type=button value="Get Score!" style="width:97px; font-weight:bold" onClick="getScore()"></input></td>
+						<td><input name="sgetter" type=button value="Get Score!" style="width:97px; font-weight:bold" onClick="getScore()"/></td>
 					</tr>
 					<tr>
 						<td><p>RESET</p>
-						<td><input name="resetter" type=button value="Reset" style="width:97px; font-weight:bold" onClick="resetAll()" ></input></td>
+						<td><input name="resetter" type=button value="Reset" style="width:97px; font-weight:bold" onClick="resetAll()" /></td>
 					</tr>
 				</table>	
 			</div>	
