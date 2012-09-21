@@ -1,0 +1,102 @@
+.cardblock{
+	width: 128px;
+	height: 128px;
+	border: 5px solid gray;
+	border-radius: 3px;
+	float:left;
+}
+
+.cardblock a:nth-child(2) img{
+	position: relative;
+	top: -118px;
+}
+
+.cardblock a:nth-child(3) img{
+	position: relative;
+	top: -236px;
+}
+
+.cardblock a:nth-child(4) img{
+	position: relative;
+	top: -354px;
+}
+
+.cardblock a:nth-child(5) img{
+	position: relative;
+	top: -472px;
+}
+
+.cardblock a:nth-child(6) img{
+	position: relative;
+	top: -590px;
+}
+
+.cardblock a:nth-child(7) img{
+	position: relative;
+	top: -708px;
+}
+
+.cardblock a:nth-child(8) img{
+	position: relative;
+	top: -826px;
+}
+
+.cardblock a:nth-child(9) img{
+	position: relative;
+	top: -944px;
+}
+
+.cardblock a:nth-child(10) img{
+	position: relative;
+	top: -1062px;
+}
+
+.cardblock a:nth-child(11) img{
+	position: relative;
+	top: -1180px;
+}
+
+.cardblock a:nth-child(12) img{
+	position: relative;
+	top: -1298px;
+}
+
+.cardblock a:nth-child(13) img{
+	position: relative;
+	top: -1416px;
+}
+
+.cardblock a:nth-child(14) img{
+	position: relative;
+	top: -1534px;
+}
+
+.cardblock a:nth-child(15) img{
+	position: relative;
+	top: -1652px;
+}
+
+.cardblock a:nth-child(16) img{
+	position: relative;
+	top: -1770px;
+}
+
+.cardblock a:nth-child(17) img{
+	position: relative;
+	top: -1888px;
+}
+
+.cardblock a:nth-child(18) img{
+	position: relative;
+	top: -2006px;
+}
+
+.cardblock a:nth-child(19) img{
+	position: relative;
+	top: -2124px;
+}
+
+.cardblock a:nth-child(20) img{
+	position: relative;
+	top: -2242px;
+}

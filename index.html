@@ -11,7 +11,7 @@
 				resetScorer();
 			}
 		</script>
-
+		<link href="css/cardblock.css" rel="stylesheet" type="text/css" />
 		<style>
 			#record{
 				width:75%;
@@ -36,14 +36,6 @@
 
 			}
 
-			.cardblock{
-				width: 128px;
-				height: 128px;
-				border: 5px solid gray;
-				border-radius: 3px;
-				float:left;
-			}
-
 			#controller{
 				clear: both;
 			}
@@ -51,11 +43,6 @@
 			#playarea{
 				width: 1000px;
 				clear: both;
-			}
-
-			.backcard{
-				position: relative;
-				top: -118px;
 			}
 		</style>
 	</head>
@@ -89,31 +76,44 @@
 					</div>
 				</div>
 				<div id="mainarea" style = "width: 1000px;">
-					<div class="cardblock" id="c1">
-						<img  src="img/CLBAce.png"/>
-						<img class = "backcard" src="img/CLBAce.png"/>
+					<div class="cardblock" id="c1" droppable="true">
+						<a id="CA" draggable="true" ><img src="img/CLBAce.png"/></a>
+						<a id="HA" draggable="true" ><img src="img/HRTAce.png"/></a>
 					</div>
-					<div class="cardblock" id="c2" >
-						<img src="img/CLB02.png"/>
-						<img src="img/CLBAce.png"/>
+					<div class="cardblock" id="c2" droppable="true">
+						<a id="C2" draggable="true" ><img src="img/CLB02.png"/></a>
+						<a id="C8" draggable="true" ><img src="img/CLB08.png"/></a>
+						<a id="C9" draggable="true" ><img src="img/CLB09.png"/></a>
+						<a id="C10" draggable="true" ><img src="img/CLB10.png"/></a>
+						<a id="CJ" draggable="true" ><img src="img/CLBJack.png"/></a>
+						<a id="CQ" draggable="true" ><img src="img/CLBQueen.png"/></a>
+						<a id="CK" draggable="true" ><img src="img/CLBKing.png"/></a>
+						<a id="H2" draggable="true" ><img src="img/HRT02.png"/></a>
+						<a id="H3" draggable="true" ><img src="img/HRT03.png"/></a>
+						<a id="H4" draggable="true" ><img src="img/HRT04.png"/></a>
+						<a id="H5" draggable="true" ><img src="img/HRT05.png"/></a>
+						<a id="H6" draggable="true" ><img src="img/HRT06.png"/></a>
+						<a id="H7" draggable="true" ><img src="img/HRT07.png"/></a>
 					</div>
-					<div class="cardblock" id="c3" >
-						<img src="img/CLB03.png"/>
+					<div class="cardblock" id="c3" droppable="true">
+						<a id="C3" draggable="true" ><img src="img/CLB03.png"/></a>
 					</div>
-					<div class="cardblock" id="c4" >
-						<img src="img/CLB04.png"/>
+					<div class="cardblock" id="c4" droppable="true">
+						<a id="C4" draggable="true" ><img src="img/CLB04.png"/></a>
 					</div>
-					<div class="cardblock" id="c5" >
-						<img src="img/CLB05.png"/>
+					<div class="cardblock" id="c5" droppable="true">
+						<a id="C5" draggable="true" ><img src="img/CLB05.png"/></a>
 					</div>
-					<div class="cardblock" id="c6" >
-						<img src="img/CLB06.png"/>
+					<div class="cardblock" id="c6" droppable="true">
+						<a id="C6" draggable="true" ><img src="img/CLB06.png"/></a>
 					</div>
-					<div class="cardblock" id="c7" >
-						<img src="img/CLB07.png"/>
+					<div class="cardblock" id="c7" droppable="true">
+						<a id="C7" draggable="true" ><img src="img/CLB07.png"/></a>
 					</div>
 				</div>
 			</div>
+
+			<script src="js/drag.js"></script>
 
 			<!-- delete these later -->
 			
