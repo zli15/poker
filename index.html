@@ -4,11 +4,17 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script src="js/timer.js"></script>
 		<script src="js/scorer.js"></script>
+		<script src="js/cards.js"></script>
 
 		<script>
+
 			function resetAll (){
 				resetTimer();
 				resetScorer();
+			}
+
+			function draw(){
+				alert(cardArray.length);
 			}
 		</script>
 		<link href="css/cardblock.css" rel="stylesheet" type="text/css" />
@@ -76,44 +82,105 @@
 					</div>
 				</div>
 				<div id="mainarea" style = "width: 1000px;">
-					<div class="cardblock" id="c1" droppable="true">
-						<a id="CA" draggable="true" ><img src="img/CLBAce.png"/></a>
-						<a id="HA" draggable="true" ><img src="img/HRTAce.png"/></a>
+					<div class="cardcolumn" id="c0" droppable="true">
+						<a id="c00" draggable="true" ><img src="img/CLBAce.png"/></a>
+						<a id="c01" draggable="true" ><img src="img/HRTAce.png"/></a>
 					</div>
-					<div class="cardblock" id="c2" droppable="true">
-						<a id="C2" draggable="true" ><img src="img/CLB02.png"/></a>
-						<a id="C8" draggable="true" ><img src="img/CLB08.png"/></a>
-						<a id="C9" draggable="true" ><img src="img/CLB09.png"/></a>
-						<a id="C10" draggable="true" ><img src="img/CLB10.png"/></a>
-						<a id="CJ" draggable="true" ><img src="img/CLBJack.png"/></a>
-						<a id="CQ" draggable="true" ><img src="img/CLBQueen.png"/></a>
-						<a id="CK" draggable="true" ><img src="img/CLBKing.png"/></a>
-						<a id="H2" draggable="true" ><img src="img/HRT02.png"/></a>
-						<a id="H3" draggable="true" ><img src="img/HRT03.png"/></a>
-						<a id="H4" draggable="true" ><img src="img/HRT04.png"/></a>
-						<a id="H5" draggable="true" ><img src="img/HRT05.png"/></a>
-						<a id="H6" draggable="true" ><img src="img/HRT06.png"/></a>
-						<a id="H7" draggable="true" ><img src="img/HRT07.png"/></a>
+					<div class="cardcolumn" id="c1" droppable="true">
+						<a id="c10" draggable="true" ><img src="img/CLB02.png"/></a>
+						<a id="c11" draggable="true" ><img src="img/CLB08.png"/></a>
+						<a id="c12" draggable="true" ><img src="img/CLB09.png"/></a>
+						<a id="c13" draggable="true" ><img src="img/CLB10.png"/></a>
+						<a id="c14" draggable="true" ><img src="img/CLBJack.png"/></a>
+						<a id="c15" draggable="true" ><img src="img/CLBQueen.png"/></a>
+						<a id="c16" draggable="true" ><img src="img/CLBKing.png"/></a>
+						<a id="c17" draggable="true" ><img src="img/HRT02.png"/></a>
+						<a id="c18" draggable="true" ><img src="img/HRT03.png"/></a>
+						<a id="c19" draggable="true" ><img src="img/HRT04.png"/></a>
+						<a id="c110" draggable="true" ><img src="img/HRT05.png"/></a>
+						<a id="c111" draggable="true" ><img src="img/HRT06.png"/></a>
+						<a id="c112" draggable="true" ><img src="img/HRT07.png"/></a>
+						<a id="c113" draggable="true" ><img src="img/CLB07.png"/></a>
 					</div>
-					<div class="cardblock" id="c3" droppable="true">
-						<a id="C3" draggable="true" ><img src="img/CLB03.png"/></a>
+					<div class="cardcolumn" id="c2" droppable="true">
+						<a id="c20" draggable="true" ><img src="img/CLB03.png"/></a>
 					</div>
-					<div class="cardblock" id="c4" droppable="true">
-						<a id="C4" draggable="true" ><img src="img/CLB04.png"/></a>
+					<div class="cardcolumn" id="c3" droppable="true">
+						<a id="c30" draggable="true" ><img src="img/CLB04.png"/></a>
 					</div>
-					<div class="cardblock" id="c5" droppable="true">
-						<a id="C5" draggable="true" ><img src="img/CLB05.png"/></a>
+					<div class="cardcolumn" id="c4" droppable="true">
+						<a id="c40" draggable="true" ><img src="img/CLB05.png"/></a>
 					</div>
-					<div class="cardblock" id="c6" droppable="true">
-						<a id="C6" draggable="true" ><img src="img/CLB06.png"/></a>
+					<div class="cardcolumn" id="c5" droppable="true">
+						<a id="c50" draggable="true" ><img src="img/CLB06.png"/></a>
 					</div>
-					<div class="cardblock" id="c7" droppable="true">
-						<a id="C7" draggable="true" ><img src="img/CLB07.png"/></a>
+					<div class="cardcolumn" id="c6" droppable="true">
+						
 					</div>
 				</div>
 			</div>
 
 			<script src="js/drag.js"></script>
+			<script>
+				// dragover event handler
+				addEvent(dropAreas, 'dragover', function (event) {
+				    if (event.preventDefault) event.preventDefault();
+
+				    // little customization
+				    this.style.borderColor = "#000";
+				    return false;
+				});
+
+				// dragleave event handler
+				addEvent(dropAreas, 'dragleave', function (event) {
+				    if (event.preventDefault) event.preventDefault();
+
+				    // little customization
+				    this.style.borderColor = "#ccc";
+				    return false;
+				});
+
+				// dragenter event handler
+				addEvent(dropAreas, 'dragenter', cancel);
+
+				// drop event handler
+				addEvent(dropAreas, 'drop', function (event) {
+				    if (event.preventDefault) event.preventDefault();
+
+				    // get dropped object
+				    var iObj = event.dataTransfer.getData('obj_id');
+				    var oldObj = document.getElementById(iObj);
+
+				    // get its image src
+				    var oldSrc = oldObj.childNodes[0].src;
+				    oldObj.className += 'hidden';
+
+				    var oldThis = this;
+				    
+				    var anumber = 0;
+				    for (var i = 0; i < oldThis.childNodes.length; i++) {
+				      if(oldThis.childNodes[i].tagName == "A"){
+				        anumber++;
+				      }
+				    }
+
+
+				    setTimeout(function() {
+				        oldObj.parentNode.removeChild(oldObj); // remove object from DOM
+				        var newiObj = oldThis.id + String(anumber);
+				        // add similar object in another place
+				        oldThis.innerHTML += '<a id="'+newiObj+'" draggable="true"><img src="'+oldSrc+'" /></a>';
+
+				        // and update event handlers
+				        updateDataTransfer();
+
+				        // little customization
+				        oldThis.style.borderColor = "#ccc";
+				    }, 50);
+
+				    return false;
+				});
+			</script>
 
 			<!-- delete these later -->
 			
@@ -129,11 +196,38 @@
 						<td><input name="sgetter" type=button value="Get Score!" style="width:97px; font-weight:bold" onClick="getScore()"/></td>
 					</tr>
 					<tr>
+						<td>cards</td>
+						<td><input name="shuffler" type=button value="Shuffle!" style="width:97px; font-weight:bold" onClick="shuffle()" /></td>
+						<td><input name="initer" type=button value="Put Card!" style="width:97px; font-weight:bold" onClick="gameInit()"/></td>
+						<td><input name="shower" type=button value="Show Card!" style="width:97px; font-weight:bold" onClick="showCards()"/></td>
+					</tr>
+					<tr>
 						<td><p>RESET</p>
 						<td><input name="resetter" type=button value="Reset" style="width:97px; font-weight:bold" onClick="resetAll()" /></td>
 					</tr>
 				</table>	
 			</div>	
+
+			<script>
+				shuffle();
+				assign();
+
+				document.write(cardArray.join(","));
+				document.write("<p></p>");
+				document.write(c[0].join(","));
+				document.write("<p></p>");
+				document.write(c[1].join(","));
+				document.write("<p></p>");
+				document.write(c[2].join(","));
+				document.write("<p></p>");
+				document.write(c[3].join(","));
+				document.write("<p></p>");
+				document.write(c[4].join(","));
+				document.write("<p></p>");
+				document.write(c[5].join(","));
+				document.write("<p></p>");
+				document.write(c[6].join(","));
+			</script>
 		</div>
 	</body>
 </html>

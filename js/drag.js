@@ -1,3 +1,5 @@
+
+
 // add event handler
 var addEvent = (function () {
   if (document.addEventListener) {
@@ -47,53 +49,4 @@ function updateDataTransfer() {
     }
 }
 
-// dragover event handler
-addEvent(dropAreas, 'dragover', function (event) {
-    if (event.preventDefault) event.preventDefault();
 
-    // little customization
-    this.style.borderColor = "#000";
-    return false;
-});
-
-// dragleave event handler
-addEvent(dropAreas, 'dragleave', function (event) {
-    if (event.preventDefault) event.preventDefault();
-
-    // little customization
-    this.style.borderColor = "#ccc";
-    return false;
-});
-
-// dragenter event handler
-addEvent(dropAreas, 'dragenter', cancel);
-
-// drop event handler
-addEvent(dropAreas, 'drop', function (event) {
-    if (event.preventDefault) event.preventDefault();
-
-    // get dropped object
-    var iObj = event.dataTransfer.getData('obj_id');
-    var oldObj = document.getElementById(iObj);
-
-    // get its image src
-    var oldSrc = oldObj.childNodes[0].src;
-    oldObj.className += 'hidden';
-
-    var oldThis = this;
-
-    setTimeout(function() {
-        oldObj.parentNode.removeChild(oldObj); // remove object from DOM
-
-        // add similar object in another place
-        oldThis.innerHTML += '<a id="'+iObj+'" draggable="true"><img src="'+oldSrc+'" /></a>';
-
-        // and update event handlers
-        updateDataTransfer();
-
-        // little customization
-        oldThis.style.borderColor = "#ccc";
-    }, 50);
-
-    return false;
-});
